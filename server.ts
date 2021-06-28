@@ -11,7 +11,7 @@ app.route(
       await req.sendFile("./docs/app.bundle.js");
     });
     router.get(new RegExp(".*"), async (req) => {
-      await req.sendFile("./docs/layout.html");
+      await req.sendFile("./docs/index.html");
     });
     return router;
   })(),
