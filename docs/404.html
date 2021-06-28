@@ -1,0 +1,33 @@
+<html lang="ja">
+
+  <head>
+  </head>
+
+  <body>
+    <script type="module">
+      const historyApiFallback = () => {
+
+        const url = new URL(window.location);
+
+        if (url.searchParams.get('notFound') === 'true') {
+          url.searchParams.delete('notFound');
+          window.history.replaceState(null, null, url.href);
+          return;
+        }
+
+        const pathList = window.location.pathname.split('/');
+
+        url.pathname = `/${pathList[1]}/`;
+
+        pathList.splice(0, 2)
+        const queryValue = pathList.map(item => `/${item}`).join('');
+        url.searchParams.append('originalPath', queryValue);
+
+        window.location.replace(url.href);
+      };
+
+      historyApiFallback();
+    </script>
+  </body>
+
+</html>
