@@ -1,7 +1,13 @@
 /// <reference lib="dom"/>
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter,
+  Redirect,
+  Route,
+  Switch,
+  useRouteMatch,
+} from "react-router-dom";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
@@ -60,10 +66,11 @@ const theme = createTheme({
 });
 
 function MainContents(props: { style: React.CSSProperties }) {
+  const p = "/t7s-resume-viewer";
   return (<main style={props.style}>
     <Switch>
-      <Redirect exact from="/" to="/index" />
-      <Route path="/index" component={Index} />
+      <Redirect exact from={p + "/"} to={p + "/index"} />
+      <Route path={p + "/index"} component={Index} />
     </Switch>
   </main>);
 }

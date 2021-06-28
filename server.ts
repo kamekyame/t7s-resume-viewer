@@ -4,7 +4,7 @@ import "./bundle.ts";
 
 const app = createApp();
 app.route(
-  "/",
+  "/t7s-resume-viewer/",
   (() => {
     const router = createRouter();
     router.get("app.bundle.js", async (req) => {
