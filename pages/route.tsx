@@ -70,6 +70,7 @@ function MainContents(props: { style: React.CSSProperties }) {
   return (<main style={props.style}>
     <Switch>
       <Redirect exact from={p + "/"} to={p + "/index"} />
+      <Redirect exact from={p + "/index.html"} to={p + "/index"} />
       <Route path={p + "/index"} component={Index} />
     </Switch>
   </main>);
