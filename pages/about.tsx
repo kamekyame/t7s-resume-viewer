@@ -79,7 +79,7 @@ export default function () {
           </a>のDM、または<a
             href="mailto:kamekyame+t7s@outlook.com?subject=t7s履歴書ビューアについてのお問い合わせ"
           >
-            kamekyame+t7s_resume@outlook.com
+            kamekyame+t7s@outlook.com
           </a>までお願いします。
         </p>
       </div>
