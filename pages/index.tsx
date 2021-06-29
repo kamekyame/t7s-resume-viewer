@@ -4,11 +4,13 @@ import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
+import Link from "@material-ui/core/Link";
 
 interface Resume {
   tweetId: string | null;
   userId: string;
-  userName: string;
+  userName: string | null;
+  name: string | null;
   date: string | null;
   imageUrl: string | null;
 }
@@ -19,12 +21,17 @@ function ResumeCard({ resume }: { resume: Resume }) {
       margin: "1em", /*, padding: "1em"*/
       width: "300px",
       flexShrink: 0,
+      display: "flex",
+      flexDirection: "column",
     }}
   >
-    <CardContent>
+    <CardContent style={{ flexGrow: 1 }}>
       <div>
-        {resume.userName} 支配人
+        {resume.name} 支配人
       </div>
+      {resume.userName && <div>
+        @{resume.userName}
+      </div>}
 
       {resume.date && <div>
         {new Date(resume.date).toLocaleString("ja-jp")} 更新
@@ -36,9 +43,8 @@ function ResumeCard({ resume }: { resume: Resume }) {
     </CardContent>
     {resume.tweetId && <CardActions>
       <Button
-        onClick={() => {
-          location.href = "https://twitter.com/_/status/" + resume.tweetId;
-        }}
+        LinkComponent={Link}
+        href={"https://twitter.com/_/status/" + resume.tweetId}
       >
         ツイートに跳ぶ
       </Button>
