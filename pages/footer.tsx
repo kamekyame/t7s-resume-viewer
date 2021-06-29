@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/styles";
 import { Theme, useTheme } from "@material-ui/core/styles";
 
@@ -19,6 +20,12 @@ const useStyles = makeStyles({
       color: "black",
     },
   }),
+  linkDiv: {
+    display: "flex",
+    "&>div": {
+      margin: "1em",
+    },
+  },
   div: {
     margin: "5px 0",
   },
@@ -32,6 +39,17 @@ export default function () {
   const classes = useStyles(theme);
   return (
     <footer className={classes.footer}>
+      <div className={classes.linkDiv}>
+        <div>
+          <Link to="/">履歴書一覧</Link>
+        </div>
+        <div>
+          <Link to="/about">ABOUT</Link>
+        </div>
+        <div>
+          <Link to="/version">VERSION</Link>
+        </div>
+      </div>
       <div className={classes.div}>
         © 2021 SuzuTomo
       </div>

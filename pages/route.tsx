@@ -12,6 +12,8 @@ import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 import Index from "./index.tsx";
+import About from "./about.tsx";
+import Version from "./version.tsx";
 
 import Header from "./header.tsx";
 import Footer from "./footer.tsx";
@@ -69,15 +71,17 @@ function MainContents(props: { style: React.CSSProperties }) {
   const p = "/t7s-resume-viewer";
   return (<main style={props.style}>
     <Switch>
-      <Redirect exact from={p + "/"} to={p + "/index"} />
-      <Redirect exact from={p + "/index.html"} to={p + "/index"} />
-      <Route path={p + "/index"} component={Index} />
+      <Redirect exact from="/" to="/index" />
+      <Redirect exact from="/index.html" to="/index" />
+      <Route path="/index" component={Index} />
+      <Route path="/about" component={About} />
+      <Route path="/version" component={Version} />
     </Switch>
   </main>);
 }
 
 function Layout() {
-  return (<BrowserRouter>
+  return (<BrowserRouter basename="/t7s-resume-viewer">
     <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
       <Header />
       <MainContents
