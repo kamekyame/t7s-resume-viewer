@@ -49,16 +49,13 @@ export default function () {
           このアカウントの通知をオンにしておくと、各支配人の履歴書の投稿を素早くキャッチすることが出来ます。 是非フォローよろしくお願いします！
           <a
             href="https://twitter.com/t7s_resume?ref_src=twsrc%5Etfw"
-            className="twitter-follow-button"
+            class="twitter-follow-button"
+            data-size="large"
+            data-lang="ja"
             data-show-count="false"
           >
-            フォロー @t7s_resume
+            Follow @t7s_resume
           </a>
-          <script
-            async
-            src="https://platform.twitter.com/widgets.js"
-            charSet="utf-8"
-          >
           </script>
         </p>
 
