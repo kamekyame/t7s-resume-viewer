@@ -70,7 +70,7 @@ export default function () {
           t7s 履歴書ビューア・🍣支配人履歴書Botのお問い合わせは、<a
             href="https://twitter.com/SuzuTomo2001"
           >
-            すずとものツイッター(@SuzuTomo2001)
+            すずとものついったー(@SuzuTomo2001)
           </a>・<a
             href="https://twitter.com/t7s_resume"
           >
