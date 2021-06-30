@@ -64,7 +64,9 @@ export default function () {
           <a href="https://twitter.com/SuzuTomo2001">
             @SuzuTomo2001
           </a>
-          <br />
+        </p>
+        <h2>お問い合わせ</h2>
+        <p>
           t7s 履歴書ビューア・🍣支配人履歴書Botのお問い合わせは、<a
             href="https://twitter.com/SuzuTomo2001"
           >
